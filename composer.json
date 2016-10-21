@@ -3,7 +3,6 @@
     "description": "Youtube helper",
     "keywords": ["youtube"],
     "homepage": "http://cms.skeeks.com",
-    "type": "yii2-extension",
     "license": "GPL-3.0+",
     "support": {
         "authors": "http://skeeks.com"
