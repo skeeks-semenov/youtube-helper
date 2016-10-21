@@ -35,26 +35,43 @@ class YoutubeHelper
      */
     static public function parseYoutubeId(string $code)
     {
-        $id = '';
-
+        //example https://www.youtube.com/watch?v=xr1kXiEtCmo
         $matches = [];
-
-        //TODO:: upgrade this is
-        if (preg_match_all('/\?v\=(.*)$/i', $code, $matches))
+        if (preg_match_all('/\.com\/watch\?v\=(.*)$/i', $code, $matches))
         {
             if (isset($matches[1][0]))
             {
-                $id = $matches[1][0];
+                return (string) $matches[1][0];
             }
         }
 
-        return (string) $id;
+        // https://youtu.be/xr1kXiEtCmo
+        $matches = [];
+        if (preg_match_all('/youtu\.be\/(.*)$/i', $code, $matches))
+        {
+            if (isset($matches[1][0]))
+            {
+                return (string) $matches[1][0];
+            }
+        }
+
+        // <iframe width="640" height="360" src="https://www.youtube.com/embed/xr1kXiEtCmo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        $matches = [];
+        if (preg_match_all('/\.com\/embed\/(.*)\?/i', $code, $matches))
+        {
+            if (isset($matches[1][0]))
+            {
+                return (string) $matches[1][0];
+            }
+        }
+
+        return '';
     }
 
     /**
      * @return string
      */
-    public function getYoutubeId()
+    public function getId()
     {
         return $this->_youtubeId;
     }
@@ -62,36 +79,39 @@ class YoutubeHelper
     /**
      * @return string
      */
-    public function getYoutubeEmbed()
+    public function getEmbedUrl()
     {
-        if (!$this->youtubeId)
+        if (!$this->_youtubeId)
         {
             return '';
         }
-        return (string) "//www.youtube.com/embed/" . $this->youtubeId;
+
+        return (string) "//www.youtube.com/embed/" . $this->_youtubeId;
     }
 
     /**
      * @return string
      */
-    public function getYoutubeWatch()
+    public function getWatchUrl()
     {
-        if (!$this->youtubeId)
+        if (!$this->_youtubeId)
         {
             return '';
         }
-        return "//www.youtube.com/watch?v=" . $this->youtubeId;
+
+        return "//www.youtube.com/watch?v=" . $this->_youtubeId;
     }
 
     /**
      * @return string
      */
-    public function getYoutubeImg()
+    public function getImageUrl()
     {
-        if (!$this->youtubeId)
+        if (!$this->_youtubeId)
         {
             return '';
         }
-        return "//img.youtube.com/vi/" . $this->youtubeId . '/0.jpg';
+
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/0.jpg';
     }
 }
