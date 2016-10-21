@@ -45,7 +45,7 @@ $youtube = new \skeeks\youtubeHelper\YoutubeHelper('https://www.youtube.com/watc
 
 if ($youtube->getId()
 {
-    echo '<iframe width="640" height="360" src="<?= $youtube->getEmbedUrl(); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+    echo '<iframe width="560" height="315" src="<?= $youtube->getEmbedUrl(); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
 }
 
 ```
