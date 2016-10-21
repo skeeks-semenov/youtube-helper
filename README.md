@@ -39,6 +39,17 @@ if ($youtube->getId())
 
 ```
 
+```php
+
+$youtube = new \skeeks\youtubeHelper\YoutubeHelper('https://www.youtube.com/watch?v=xr1kXiEtCmo');
+
+if ($youtube->getId()
+{
+    echo '<iframe width="640" height="360" src="<?= $youtube->getEmbedUrl(); ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+}
+
+```
+
 
 
 
