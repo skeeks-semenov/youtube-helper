@@ -1,0 +1,25 @@
+{
+    "name": "skeeks/youtube-helper",
+    "description": "Youtube helper",
+    "keywords": ["youtube"],
+    "homepage": "http://cms.skeeks.com",
+    "type": "yii2-extension",
+    "license": "GPL-3.0+",
+    "support": {
+        "authors": "http://skeeks.com"
+    },
+    "authors": [
+        {
+            "name": "Semenov Alexander",
+            "email": "semenov@skeeks.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "skeeks\\youtubeHelper": ""
+        }
+    }
+}
