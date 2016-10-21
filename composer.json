@@ -4,6 +4,7 @@
     "keywords": ["youtube"],
     "homepage": "http://cms.skeeks.com",
     "license": "GPL-3.0+",
+    "type": "library",
     "support": {
         "authors": "http://skeeks.com"
     },
