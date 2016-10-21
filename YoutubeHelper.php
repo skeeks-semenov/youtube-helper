@@ -17,11 +17,14 @@ class YoutubeHelper
     /**
      * @var string Original youtube id
      */
-    public $youtubeId;
+    private $_youtubeId;
 
-    public function __construct($code)
+    /**
+     * @param $code youtube id or youtube url
+     */
+    public function __construct(string $code)
     {
-
+        $this->_youtubeId = self::parseYoutubeId($code);
     }
 
     /**
@@ -30,7 +33,7 @@ class YoutubeHelper
      *
      * @return string
      */
-    static public function getYoutubeId($code)
+    static public function parseYoutubeId(string $code)
     {
         $id = '';
 
@@ -48,7 +51,13 @@ class YoutubeHelper
         return (string) $id;
     }
 
-
+    /**
+     * @return string
+     */
+    public function getYoutubeId()
+    {
+        return $this->_youtubeId;
+    }
 
     /**
      * @return string
@@ -61,6 +70,7 @@ class YoutubeHelper
         }
         return (string) "//www.youtube.com/embed/" . $this->youtubeId;
     }
+
     /**
      * @return string
      */
@@ -70,27 +80,9 @@ class YoutubeHelper
         {
             return '';
         }
-        return "https://www.youtube.com/watch?v=" . $this->youtubeId;
+        return "//www.youtube.com/watch?v=" . $this->youtubeId;
     }
-    /**
-     * @return string
-     */
-    public function getYoutubeId()
-    {
-        $result = '';
-        if ($this->youtubeOriginal)
-        {
-            $matches = [];
-            if (preg_match_all('/\?v\=(.*)$/i', $this->youtubeOriginal, $matches))
-            {
-                if (isset($matches[1][0]))
-                {
-                    $result = $matches[1][0];
-                }
-            }
-        }
-        return (string) $result;
-    }
+
     /**
      * @return string
      */
@@ -100,6 +92,6 @@ class YoutubeHelper
         {
             return '';
         }
-        return "http://img.youtube.com/vi/" . $this->youtubeId . '/0.jpg';
+        return "//img.youtube.com/vi/" . $this->youtubeId . '/0.jpg';
     }
 }
