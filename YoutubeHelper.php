@@ -57,7 +57,7 @@ class YoutubeHelper
 
         // <iframe width="640" height="360" src="https://www.youtube.com/embed/xr1kXiEtCmo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
         $matches = [];
-        if (preg_match_all('/\.com\/embed\/(.*)\?/i', $code, $matches))
+        if (preg_match_all('/\.com\/embed\/(.*)?/i', $code, $matches))
         {
             if (isset($matches[1][0]))
             {
