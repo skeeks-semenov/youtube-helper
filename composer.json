@@ -2,8 +2,8 @@
     "name": "skeeks/youtube-helper",
     "description": "Youtube helper",
     "keywords": ["youtube"],
-    "homepage": "http://cms.skeeks.com",
-    "license": "GPL-3.0+",
+    "homepage": "https://cms.skeeks.com",
+    "license": "BSD-3-Clause",
     "type": "library",
     "support": {
         "authors": "http://skeeks.com"
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "skeeks\\youtubeHelper\\": ""
+            "skeeks\\youtubeHelper\\": "/src"
         }
     }
 }
