@@ -1,16 +1,14 @@
 <?php
 /**
+ * @link https://cms.skeeks.com/
+ * @copyright Copyright (c) 2010 SkeekS
+ * @license https://cms.skeeks.com/license/
  * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 21.10.2016
  */
 namespace skeeks\youtubeHelper;
 
 /**
- * Class YoutubeHelper
- *
- * @package skeeks\youtubeHelper
+ * @author Semenov Alexander <semenov@skeeks.com>
  */
 class YoutubeHelper
 {
