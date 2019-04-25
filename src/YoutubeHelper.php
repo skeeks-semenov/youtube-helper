@@ -63,7 +63,7 @@ class YoutubeHelper
             }
         }
 
-        return '';
+        return $code;
     }
 
     /**
@@ -105,11 +105,101 @@ class YoutubeHelper
      */
     public function getImageUrl()
     {
+        return $this->getImageUrlMaxresdefault();
+    }
+
+    public function getImageUrl1()
+    {
         if (!$this->_youtubeId)
         {
             return '';
         }
 
-        return "//img.youtube.com/vi/" . $this->_youtubeId . '/0.jpg';
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/1.jpg';
+    }
+
+    public function getImageUrl2()
+    {
+        if (!$this->_youtubeId)
+        {
+            return '';
+        }
+
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/2.jpg';
+    }
+
+    public function getImageUrl3()
+    {
+        if (!$this->_youtubeId)
+        {
+            return '';
+        }
+
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/3.jpg';
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrlDefault()
+    {
+        if (!$this->_youtubeId)
+        {
+            return '';
+        }
+
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/default.jpg';
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrlMqdefault()
+    {
+        if (!$this->_youtubeId)
+        {
+            return '';
+        }
+
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/mqdefault.jpg';
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrlHqdefault()
+    {
+        if (!$this->_youtubeId)
+        {
+            return '';
+        }
+
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/hqdefault.jpg';
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrlSddefault()
+    {
+        if (!$this->_youtubeId)
+        {
+            return '';
+        }
+
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/sddefault.jpg';
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrlMaxresdefault()
+    {
+        if (!$this->_youtubeId)
+        {
+            return '';
+        }
+
+        return "//img.youtube.com/vi/" . $this->_youtubeId . '/maxresdefault.jpg';
     }
 }
